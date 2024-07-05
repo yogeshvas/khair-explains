@@ -16,7 +16,7 @@ const HeroSection = () => {
       }
     >
       <img
-        src={`/img/github.png`}
+        src={`/img/hero.gif`}
         alt="hero"
         height={"auto"}
         width={"auto"}
