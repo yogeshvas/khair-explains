@@ -1,5 +1,6 @@
 import React from "react";
 import { EvervaultCard, Icon } from "../../../../components/ui/evervault-card";
+import { Button } from "@/components/ui/button";
 
 export function EvervaultCardDemo({ title, desc, to, tag1, tag2 }) {
   return (
@@ -14,7 +15,11 @@ export function EvervaultCardDemo({ title, desc, to, tag1, tag2 }) {
       <h2 className="dark:text-white text-black mt-4 text-sm font-light">
         {desc}
       </h2>
-      <div className="flex gap-4">
+      <div className="mt-2 w-full">
+        <Button className="w-full ">Go to course page </Button>
+      </div>
+
+      <div className="flex gap-4 items-center justify-center w-full">
         <p className="text-sm border font-light dark:border-white/[0.2] border-black/[0.2] rounded-full mt-4 text-black dark:text-white px-2 py-0.5">
           {tag1}
         </p>
