@@ -14,7 +14,7 @@ const Courses = () => {
               url="/"
               className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
             >
-              Cources
+              Courses
             </LinkPreview>{" "}
             curated for you.
           </p>
