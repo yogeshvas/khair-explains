@@ -2,6 +2,7 @@ import React from "react";
 import { EvervaultCardDemo } from "../shared/CourseCard";
 import LinkPreview from "@/components/ui/link-preview";
 import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
 
 const Courses = () => {
   return (
@@ -39,9 +40,11 @@ const Courses = () => {
             tag2="Kubernates"
           />
         </div>
-        <div className="flex w-full items-center justify-center">
-          <Button>Sell all Courses</Button>
-        </div>
+        <NavLink to={"/courses"}>
+          <div className="flex w-full items-center justify-center">
+            <Button>Sell all Courses</Button>
+          </div>
+        </NavLink>
       </div>
     </>
   );
