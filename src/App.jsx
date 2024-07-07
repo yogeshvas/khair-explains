@@ -9,11 +9,21 @@ import Header from "./components/Header";
 import Chapter from "./screens/chapter/Chapter";
 import SideBar from "./components/SideBar";
 import Newsletter from "./screens/newsletter/Newsletter";
+import Login from "./screens/auth/Login";
+import SignUp from "./screens/auth/SignUp";
+
+import { useAuth } from "./context/AuthContext";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const location = useLocation();
   const hideSidebar = !["/courses", "/newsletter"].includes(location.pathname);
   const hideHeader = location.pathname.includes("/courses/");
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -22,9 +32,19 @@ function App() {
         {!hideSidebar && <SideBar />}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Course />} />
+
+          <Route
+            path="/courses"
+            element={
+              <PrivateRoute>
+                <Course />
+              </PrivateRoute>
+            }
+          />
           <Route path="/courses/:id" element={<Chapter />} />
           <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
     </>

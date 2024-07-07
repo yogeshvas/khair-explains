@@ -1,5 +1,5 @@
 import useGetCourses from "@/hooks/useGetCourses";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BookOpen } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Compass, Mail } from "lucide-react";
 import SideBar from "@/components/SideBar";
 import Spinner from "@/components/Spinner";
+import { useToast } from "@/components/ui/use-toast";
 const Course = () => {
-  const { data, error, isLoading } = useGetCourses();
+  const { data, error, isLoading, isSuccess } = useGetCourses();
   const [searchQuery, setSearchQuery] = useState("");
+
   console.log(data);
 
   if (isLoading) {
