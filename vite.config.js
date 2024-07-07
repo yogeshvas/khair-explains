@@ -15,7 +15,6 @@ export default defineConfig({
       "/api": {
         target: "https://khair-explains-backend.onrender.com/api/v1",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
