@@ -50,7 +50,7 @@ const Header = ({ translate, titleComponent }) => {
   return (
     <motion.div
       style={{ translateY: translate }}
-      className="div max-w-5xl mx-auto text-center"
+      className="div max-w-5xl mx-auto text-center md:mb-10"
     >
       {titleComponent}
     </motion.div>
