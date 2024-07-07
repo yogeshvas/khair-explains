@@ -8,8 +8,8 @@ import Testimonials from "./components/custom/Testimonials.jsx";
 
 const Home = () => {
   return (
-    <div>
-      <Header />
+    <div className={"w-screen"}>
+      {/* <Header /> */}
 
       <HeroSection />
       <hr />

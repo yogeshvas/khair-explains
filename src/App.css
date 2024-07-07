@@ -3,3 +3,10 @@
 body {
   font-family: "Space Grotesk", sans-serif;
 }
+
+.header-height {
+  height: 10vh;
+}
+.rest-height {
+  height: 90vh;
+}
