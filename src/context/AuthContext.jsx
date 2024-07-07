@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/auth/me",
+          "https://khair-explains-backend.onrender.com/api/v1/auth/me",
           {
             withCredentials: true,
           }
