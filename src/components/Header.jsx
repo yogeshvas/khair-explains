@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Menu, Moon, ShoppingCartIcon, Sun } from "lucide-react";
 import ProfileButton from "./ui/ProfileButton";
 import { useTheme } from "@/components/theme-provider";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import NavLinks from "./NavLinks";
 
 const routes = [
@@ -42,11 +42,13 @@ const Header = () => {
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col gap-4">
                   {routes.map((route, i) => (
-                    <NavLink to={route.href}>
-                      <div className={"block px-2 py-1 text-lg"}>
-                        {route.label}
-                      </div>
-                    </NavLink>
+                    <SheetClose asChild key={i}>
+                      <NavLink to={route.href}>
+                        <div className={"block px-2 py-1 text-lg"}>
+                          {route.label}
+                        </div>
+                      </NavLink>
+                    </SheetClose>
                   ))}
                 </nav>
               </SheetContent>
