@@ -6,13 +6,18 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Compass, Mail } from "lucide-react";
 import SideBar from "@/components/SideBar";
+import Spinner from "@/components/Spinner";
 const Course = () => {
   const { data, error, isLoading } = useGetCourses();
   const [searchQuery, setSearchQuery] = useState("");
   console.log(data);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <>
+        <Spinner />
+      </>
+    );
   }
 
   if (error) {
@@ -55,7 +60,7 @@ const Course = () => {
               <div className="px-5 py-4">
                 <div className="text-xl font-semibold">{item.title}</div>
                 <div className="flex justify-between items-center mt-2">
-                  <div className="flex items-center bg-blue-400 px-3 py-1 rounded-md text-xs text-white">
+                  <div className="flex items-center bg-blue-400 px-3 py-1 gap-3 rounded-md text-xs text-white">
                     <BookOpen size={15} />
                     {item.chapters.length} chapters
                   </div>
