@@ -25,7 +25,7 @@ const routes = [
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-
+  const userLoggedIn = localStorage.getItem("user");
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -88,7 +88,15 @@ const Header = () => {
               </Button>
             </div>
 
-            <ProfileButton />
+            {userLoggedIn ? (
+              <ProfileButton />
+            ) : (
+              <>
+                <NavLink to={"/login"}>
+                  <Button>Login</Button>
+                </NavLink>
+              </>
+            )}
           </div>
         </div>
       </Container>

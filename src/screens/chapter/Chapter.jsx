@@ -46,7 +46,7 @@ const Chapter = () => {
   return (
     <div className="w-screen h-screen">
       <div className="flex">
-        <div className="w-1/5 h-screen border-r-2">
+        <div className="w-1/5 h-screen border-r-2 lg:block hidden lg:flex-col">
           <div className="w-full items-center justify-center border-b-2">
             <div className="text-2xl font-bold px-6 pt-7 pb-3">
               {data.title}!
@@ -75,29 +75,32 @@ const Chapter = () => {
               </AccordionItem>
             </Accordion>
           </div>
+
           {/* Chapter accordion */}
-          {data.chapters.map((video) => (
-            <div
-              key={video._id}
-              className="px-4 py-4 border-b-2 cursor-pointer hover:underline"
-              onClick={() => handleVideoClick(video.videoUrl)}
-            >
-              <div className="flex gap-2 items-center">
-                <div className="">
-                  {selectedVideoId ===
-                  new URL(video.videoUrl).searchParams.get("v") ? (
-                    <Pause size={20} />
-                  ) : (
-                    <Play size={20} />
-                  )}
+          <div className="h-[80%] overflow-scroll">
+            {data.chapters.map((video) => (
+              <div
+                key={video._id}
+                className="px-4 py-4 border-b-2 cursor-pointer hover:underline"
+                onClick={() => handleVideoClick(video.videoUrl)}
+              >
+                <div className="flex gap-2 items-center">
+                  <div className="">
+                    {selectedVideoId ===
+                    new URL(video.videoUrl).searchParams.get("v") ? (
+                      <Pause size={20} />
+                    ) : (
+                      <Play size={20} />
+                    )}
+                  </div>
+                  <div className="text-base">{video.title}</div>
                 </div>
-                <div className="text-base">{video.title}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         {/* Videos */}
-        <div className="w-4/5">
+        <div className="w-full md:w-4/5">
           <div className="w-full flex border-b-2 p-2 py-5 items-end justify-end">
             <div className="flex items-center mr-2 gap-6">
               <div className="">

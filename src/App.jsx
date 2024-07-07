@@ -11,9 +11,9 @@ import SideBar from "./components/SideBar";
 import Newsletter from "./screens/newsletter/Newsletter";
 import Login from "./screens/auth/Login";
 import SignUp from "./screens/auth/SignUp";
-
-import { useAuth } from "./context/AuthContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
+import Spinner from "./components/Spinner";
 
 function App() {
   const location = useLocation();
@@ -22,17 +22,16 @@ function App() {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (
-    <>
+    <AuthProvider>
       {!hideHeader && <Header />}
       <div className="flex">
         {!hideSidebar && <SideBar />}
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route
             path="/courses"
             element={
@@ -47,7 +46,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
-    </>
+    </AuthProvider>
   );
 }
 

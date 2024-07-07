@@ -11,19 +11,29 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://khair-explains-backend.onrender.com/api/v1/auth/me",
-          {
-            withCredentials: true,
-          }
-        );
-        setUser(response.data);
-      } catch (error) {
+      const token = localStorage.getItem("token");
+
+      if (token) {
+        try {
+          const response = await axios.get(
+            "http://localhost:8080/api/v1/auth/me",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              withCredentials: true,
+            }
+          );
+          setUser(response.data);
+        } catch (error) {
+          console.error("Error fetching user:", error);
+          setUser(null);
+        }
+      } else {
         setUser(null);
-      } finally {
-        setLoading(false);
       }
+
+      setLoading(false);
     };
 
     fetchUser();
