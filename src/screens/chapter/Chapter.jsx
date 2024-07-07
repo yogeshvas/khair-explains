@@ -102,7 +102,7 @@ const Chapter = () => {
             <div className="flex items-center mr-2 gap-6">
               <div className="">
                 <NavLink to={"/courses"}>
-                  <Button variant="outline">
+                  <Button variant="ghost">
                     <div className="flex items-center gap-3">
                       <LogOut /> Back to courses
                     </div>
