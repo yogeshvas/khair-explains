@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
       if (token) {
         try {
           const response = await axios.get(
-            "http://localhost:8080/api/v1/auth/me",
+            "hhttps://khair-explains-backend.onrender.com/api/v1",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
