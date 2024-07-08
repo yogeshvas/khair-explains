@@ -66,7 +66,7 @@ const SignUp = () => {
             <CardHeader>
               <CardTitle>Account</CardTitle>
               <CardDescription>
-                Make changes to your account here. Click next when you're done.
+                Join us, because we are best in the game.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -98,7 +98,7 @@ const SignUp = () => {
               <CardHeader>
                 <CardTitle>Password</CardTitle>
                 <CardDescription>
-                  Set your password here. Click save when you're done.
+                  Set your password here. Click register when you're done.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2">
@@ -123,7 +123,7 @@ const SignUp = () => {
               </CardContent>
               <CardFooter className="w-full flex justify-center">
                 <Button type="submit" disabled={isLoading || isPending}>
-                  Save password
+                  Create Account
                 </Button>
               </CardFooter>
             </Card>
