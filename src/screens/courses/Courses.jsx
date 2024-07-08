@@ -17,7 +17,7 @@ const Course = () => {
   if (isLoading) {
     return (
       <>
-        <Spinner />
+        <Spinner size={50} />
       </>
     );
   }

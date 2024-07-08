@@ -21,7 +21,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { toast } = useToast();
 
-  const { mutate: login, isLoading } = useLogin();
+  const { mutate: login, isLoading, isPending } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,8 +73,8 @@ const Login = () => {
               </div>
             </CardContent>
             <CardFooter>
-              <Button type="submit" disabled={isLoading}>
-                {isLoading ? "Logging in..." : "Login"}
+              <Button type="submit" disabled={isPending}>
+                {isPending ? "Logging in..." : "Login"}
               </Button>
             </CardFooter>
           </form>

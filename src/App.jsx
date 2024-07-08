@@ -22,7 +22,7 @@ function App() {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <Spinner />;
+    return <Spinner size={50} />;
   }
 
   return (
