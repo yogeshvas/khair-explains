@@ -32,15 +32,15 @@ function App() {
         {!hideSidebar && <SideBar />}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Course />} />
           <Route
-            path="/courses"
+            path="/courses/:id"
             element={
               <PrivateRoute>
-                <Course />
+                <Chapter />
               </PrivateRoute>
             }
           />
-          <Route path="/courses/:id" element={<Chapter />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
