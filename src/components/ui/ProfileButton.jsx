@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useToast } from "./use-toast";
 
 // Utility function to capitalize the first letter of a string
@@ -57,9 +57,17 @@ const ProfileButton = () => {
           Subscription
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
-          Log Out
-        </DropdownMenuItem>
+        {userName !== "User" ? (
+          <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
+            Log Out
+          </DropdownMenuItem>
+        ) : (
+          <NavLink to={"/login"}>
+            <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
+              Log In
+            </DropdownMenuItem>
+          </NavLink>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );

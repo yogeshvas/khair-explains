@@ -4,7 +4,7 @@ import { ContainerScroll } from "./components/shared/Hero.jsx";
 import HeroSection from "./components/custom/HeroSection.jsx";
 import Courses from "./components/custom/Courses.jsx";
 import Footer from "./components/custom/Footer.jsx";
-import Testimonials from "./components/custom/Testimonials.jsx";
+import { TypewriterEffectDemo } from "../../components/HeroSectionTypeWriter.jsx";
 
 const Home = () => {
   return (
@@ -14,6 +14,8 @@ const Home = () => {
       <HeroSection />
       <hr />
       <Courses />
+      <hr />
+      <TypewriterEffectDemo />
       <hr />
       {/* <Testimonials /> */}
       <Footer />

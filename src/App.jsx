@@ -33,14 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Course />} />
-          <Route
-            path="/courses/:id"
-            element={
-              <PrivateRoute>
-                <Chapter />
-              </PrivateRoute>
-            }
-          />
+          <Route path="/courses/:id" element={<Chapter />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />

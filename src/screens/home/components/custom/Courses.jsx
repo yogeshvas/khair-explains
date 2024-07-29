@@ -22,12 +22,6 @@ const Courses = () => {
         </div>
         <div className="md:flex p-10 gap-3 items-center justify-center ">
           <EvervaultCardDemo
-            title={"DSA"}
-            desc={"Data Structure and Algorithm but better"}
-            tag1="c++"
-            tag2="leetcode"
-          />
-          <EvervaultCardDemo
             title={"DEV"}
             desc={"Learn mern dev but with lot of clone"}
             tag1="react"
@@ -39,12 +33,13 @@ const Courses = () => {
             tag1="docker++"
             tag2="Kubernates"
           />
+          <EvervaultCardDemo
+            title={"DSA"}
+            desc={"Data Structure and Algorithm but better"}
+            tag1="c++"
+            tag2="leetcode"
+          />
         </div>
-        <NavLink to={"/courses"}>
-          <div className="flex w-full items-center justify-center">
-            <Button>Sell all Courses</Button>
-          </div>
-        </NavLink>
       </div>
     </>
   );
